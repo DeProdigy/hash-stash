@@ -6,15 +6,15 @@ get '/' do
 end
 
 get '/comments' do
-
+  erb :comments
 end
 
 get '/comments/:id' do
-
+  erb :comments_id
 end
 
 get '/comments/new' do
-
+  erb :comments_new
 end
 
 post '/comments' do
