@@ -35,8 +35,6 @@ end
 class Comment < ActiveRecord::Base
 end
 
-
-
 get '/' do
   redirect to('/comments')
 end
@@ -59,6 +57,19 @@ end
 
 
 post '/comments' do
+# <form action="/comments/new" method="post">
+#   <label for="comment">Enter Your Comment:</label>
+#   <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+#   <input type="submit" value="Add Comment">
+# </form>
+  before
+  comment = Comment.new
+
+
+  comment.save
+  after
+
+
   redirect to('/comments/:id')
 end
 

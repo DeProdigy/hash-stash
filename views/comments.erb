@@ -1,1 +1,13 @@
 <h1>Hello from all the comments</h1>
+<br>
+  <a href='/comments/new'>Add New Comment</a>
+<br>
+<% @comments.each do |comment| %>
+<ul>
+  <a href='/comments/<%=comment[:id]%>'>
+    <li>
+      <%= comment[:content] %>
+    </li>
+  </a>
+</ul>
+<% end %>
