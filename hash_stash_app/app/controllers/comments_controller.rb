@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
-
+    @comments = Comment.all
   end
 
   def new
@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
   end
 
   def show
-
   end
 
 end
