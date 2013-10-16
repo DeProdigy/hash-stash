@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
   end
 
   def show
+    id = params[:id]
+    @comment = Comment.find(id)
   end
 
   def create
@@ -15,6 +17,10 @@ class CommentsController < ApplicationController
     Comment.create :content => content
 
     redirect_to '/comments'
+  end
+
+  def create_reply
+
   end
 
 end

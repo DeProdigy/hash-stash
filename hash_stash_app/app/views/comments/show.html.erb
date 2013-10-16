@@ -1,1 +1,9 @@
 <h1>Hello from show</h1>
+
+<h3><%= @comment.content %></h3>
+
+<form action="/comments/:id" method="post">
+  <label for="content">Reply</label>
+  <textarea name="content" id="content" cols="30" rows="10"></textarea>
+  <input type="submit" value="Submit">
+</form>

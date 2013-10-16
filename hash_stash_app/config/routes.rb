@@ -10,9 +10,7 @@ HashStashApp::Application.routes.draw do
 
   post '/comments' => 'comments#create'
 
-  #post '/comments' => 'comments#show'
-
-  #post '/comments/:id' => 'comments#show'
+  post '/comments/:id' => 'comments#create_reply'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
