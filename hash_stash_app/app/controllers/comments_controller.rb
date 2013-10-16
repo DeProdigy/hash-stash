@@ -13,8 +13,8 @@ class CommentsController < ApplicationController
   #get '/comments/:id' => 'comments#show'
   def show
     id = params[:id]
-    @comment = Comment.find(id)
-    @replies = Reply.find_by comment_id: id
+    @comment = Comment.find id
+    @replies = Reply.where :comment_id => id
   end
 
   #post '/comments' => 'comments#create'

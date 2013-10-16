@@ -6,10 +6,7 @@ class RepliesController < ApplicationController
     id = params[:id]
     content = params[:content]
 
-    reply = Reply.new
-    reply.content = content
-    reply.comment_id = id #fr_key
-    reply.save
+    Reply.create :content => content, :comment_id => id #fr_ky
 
     redirect_to "/comments/#{id}"
   end
