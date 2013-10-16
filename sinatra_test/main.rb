@@ -62,10 +62,10 @@ post '/comments' do
 #   <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
 #   <input type="submit" value="Add Comment">
 # </form>
+  content = params[:comment]
   before
   comment = Comment.new
-
-
+  comment.content = content
   comment.save
   after
 
