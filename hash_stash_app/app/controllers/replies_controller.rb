@@ -1,7 +1,7 @@
 class RepliesController < ApplicationController
 
   #post '/comments/:id' => 'comments#create_reply'
-  def new
+  def create
 
     id = params[:id]
     content = params[:content]
