@@ -8,6 +8,8 @@ HashStashApp::Application.routes.draw do
 
   get '/comments/:id' => 'comments#show'
 
+  post '/comments' => 'comments#create'
+
   #post '/comments' => 'comments#show'
 
   #post '/comments/:id' => 'comments#show'
