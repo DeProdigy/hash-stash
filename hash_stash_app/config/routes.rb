@@ -12,6 +12,20 @@ HashStashApp::Application.routes.draw do
 
   post '/comments/:id' => 'replies#create'
 
+  #######################################
+
+  get '/votes' => 'votes#index'
+
+  get '/votes/new' => 'votes#new'
+
+  post '/votes' => 'votes#create'
+
+  get '/votes/:id' => 'votes#show'
+
+  post '/votes/:id' => 'votes#edit'
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

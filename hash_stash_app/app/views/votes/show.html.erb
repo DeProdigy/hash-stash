@@ -1,0 +1,13 @@
+<h1>Hello from show</h1>
+<h3><%= @vote.name %></h3>
+<%= form_tag("/votes/@vote.id") do %>
+  <input type="hidden" name="name" value="<%= @vote.name %>">
+  <input type="hidden" name="choice" value="yes">
+  <%= submit_tag "Yes" %>
+  <br>
+<% end %>
+<%= form_tag("/votes/@vote.id") do %>
+ <input type="hidden" name="name" value="<%= @vote.name %>">
+  <input type="hidden" name="choice" value="no">
+  <%= submit_tag 'No' %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Hello from new</h1>
+
+<%= form_tag('/votes') do %>
+  <%= text_field_tag "name", nil, placeholder: "Enter name vote" %>
+  <%= submit_tag "Start a new vote" %>
+<% end %>
+
