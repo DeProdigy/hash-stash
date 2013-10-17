@@ -23,16 +23,13 @@ class VotesController < ApplicationController
   def edit
     choice = params[:choice]
     id = params[:id]
-    name = params[:name]
+    vote = Vote.find id
+
     if choice == "yes"
-      vote = Vote.where(name: name)
-      vote_number = vote.yes
-      vote.yes = vote_number + 1
+      vote.yes += 1
       vote.save
     else
-      vote = Vote.where(name: name)
-      vote_number = vote.no
-      vote.no = vote_number + 1
+      vote.no += 1
       vote.save
     end
 
