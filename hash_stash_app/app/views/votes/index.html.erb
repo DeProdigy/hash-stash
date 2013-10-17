@@ -6,11 +6,13 @@
 <ul>
 <% @votes.each do |vote| %>
   <li>
-  <%= link_to(vote.name , "/votes/#{vote.id}") %>
-  <br>
- <!--  <#%= @votes_yes %>
-  <#%= @votes_no %> -->
-  <input type="hidden" name="name" value="vote.name">
-<% end %>
+    <h3>
+      <%= link_to(vote.name , "/votes/#{vote.id}") %>
+    </h3>
+    <br>
+    <h5><%= vote.yes %></h5>
+    <h5><%= vote.no %></h5>
+    <input type="hidden" name="name" value="vote.name">
   </li>
+<% end %>
 </ul>

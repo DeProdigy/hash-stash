@@ -2,7 +2,6 @@ class VotesController < ApplicationController
 
   def index
     @votes = Vote.all
-
   end
 
   def new
@@ -26,14 +25,14 @@ class VotesController < ApplicationController
     id = params[:id]
     name = params[:name]
     if choice == "yes"
-      vote = Vote.new
-      vote.name = name
-      vote.yes = choice
+      vote = Vote.where(name: name)
+      vote_number = vote.yes
+      vote.yes = vote_number + 1
       vote.save
     else
-      vote = Vote.new
-      vote.name = name
-      vote.no = choice
+      vote = Vote.where(name: name)
+      vote_number = vote.no
+      vote.no = vote_number + 1
       vote.save
     end
 
