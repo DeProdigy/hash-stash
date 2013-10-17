@@ -56,3 +56,4 @@ production:
   username: fvpqhfzusshfch
   password: Q787hi9QR6c2Y4CtFJEETXgWGt
   host: ec2-54-225-112-205.compute-1.amazonaws.com
+  port: 5432
