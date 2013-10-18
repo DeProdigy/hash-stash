@@ -1,7 +1,16 @@
-<h1>Hello from new</h1>
-
-<%= form_tag('/votes') do %>
-  <%= text_field_tag "name", nil, placeholder: "Enter name vote" %>
-  <%= submit_tag "Start a new vote" %>
-<% end %>
+<div class="votes-container">
+  <div class="row">
+    <div class="large-12 columns">
+      <h2>Create a New Vote</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= form_tag('/votes') do %>
+        <%= text_field_tag "name", nil, placeholder: "What do you want to vote on?" %>
+        <%= submit_tag "Start a New Vote" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 

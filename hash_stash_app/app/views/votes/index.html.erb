@@ -1,18 +1,22 @@
-<h1>Hello from votes</h1>
-
-<a href='/votes/new'>Add new vote</a>
-<br>
-<br>
-<ul>
-<% @votes.each do |vote| %>
-  <li>
-    <h3>
-      <%= link_to(vote.name , "/votes/#{vote.id}") %>
-    </h3>
-    <br>
-    <h5><%= vote.yes %></h5>
-    <h5><%= vote.no %></h5>
-    <input type="hidden" name="name" value="vote.name">
-  </li>
-<% end %>
-</ul>
+<div class="votes-container">
+  <div class="row">
+    <div class="large-12 columns">
+      <h2>Hash Votes</h2>
+      <a href='/votes/new'>Add a New Vote</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <ul class="large-block-grid-4">
+        <% @votes.each do |vote| %>
+        <li>
+          <h4><%= link_to(vote.name , "/votes/#{vote.id}") %></h4>
+          <span><%= vote.yes %></span>
+          <span><%= vote.no %></span>
+          <!-- <input type="hidden" name="name" value="vote.name"> -->
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
