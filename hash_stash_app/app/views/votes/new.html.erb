@@ -1,14 +1,20 @@
+<% content_for :title do %>
+  New Vote
+<% end %>
 <div class="votes-container">
   <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
       <h2>Create a New Vote</h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
       <%= form_tag('/votes') do %>
         <%= text_field_tag "name", nil, placeholder: "What do you want to vote on?" %>
-        <%= submit_tag "Start a New Vote" %>
+        <div class="button-group">
+          <%= submit_tag "Start a New Vote", class: 'button small' %>
+          <%=  link_to 'Cancel', '/votes', class: 'button small secondary' %>
+        </div>
       <% end %>
     </div>
   </div>

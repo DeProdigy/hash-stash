@@ -22,10 +22,37 @@
   </head>
 
   <body>
+    <nav class="top-bar" data-options="is_hover:false">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Hash Stash</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="divider hide-for-small"></li>
+          <li class="has-dropdown"><a href="/">Hash Comments</a>
+            <ul class="dropdown">
+              <li><label>Commenting.</label></li>
+              <li><a href="/comments">All Comments</a></li>
+              <li><a href="/comments/new">New Coment</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="/votes">Hash Votes</a>
+            <ul class="dropdown">
+              <li><label>Voting.</label></li>
+              <li><a href="/votes">All Votes</a></li>
+              <li><a href="/votes/new">New Vote</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
 
     <%= yield %>
 
-    
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

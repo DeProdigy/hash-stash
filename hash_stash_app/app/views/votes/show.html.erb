@@ -1,21 +1,26 @@
+<% content_for :title do %>
+  <%= @vote.name %>
+<% end %>
 <div class="votes-container">
   <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
       <h2><%= @vote.name %></h2>
     </div>
   </div>
   <div class="row">
-    <div class="large-12 columns">
-      <%= form_tag("/votes/#{@vote.id}") do %>
-        <input type="hidden" name="name" value="<%= @vote.name %>">
-        <input type="hidden" name="choice" value="yes">
-        <%= submit_tag "Yes" %>
-      <% end %>
-      <%= form_tag("/votes/#{@vote.id}") do %>
-        <input type="hidden" name="name" value="<%= @vote.name %>">
-        <input type="hidden" name="choice" value="no">
-        <%= submit_tag 'No' %>
-      <% end %>
+    <div class="small-12 columns">
+      <div class="button-group">
+        <%= form_tag("/votes/#{@vote.id}") do %>
+          <input type="hidden" name="name" value="<%= @vote.name %>">
+          <input type="hidden" name="choice" value="yes">
+          <%= submit_tag "Yes", class: 'button small' %>
+        <% end %>
+        <%= form_tag("/votes/#{@vote.id}") do %>
+          <input type="hidden" name="name" value="<%= @vote.name %>">
+          <li><input type="hidden" name="choice" value="no">
+          <%= submit_tag 'No', class: 'button small' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

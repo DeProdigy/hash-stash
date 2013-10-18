@@ -1,18 +1,21 @@
+<% content_for :title do %>
+  Hash Votes
+<% end %>
 <div class="votes-container">
   <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
       <h2>Hash Votes</h2>
       <a href='/votes/new'>Add a New Vote</a>
     </div>
   </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <ul class="large-block-grid-4">
+  <div class="row all-votes">
+    <div class="small-12 columns">
+      <ul class="small-block-grid-2 large-block-grid-4">
         <% @votes.each do |vote| %>
         <li>
           <h4><%= link_to(vote.name , "/votes/#{vote.id}") %></h4>
-          <span><%= vote.yes %></span>
-          <span><%= vote.no %></span>
+          <span class="success label round" data-tooltip class="has-tip" title="Yes"><%= vote.yes %></span>
+          <span class="alert label round" data-tooltip class="has-tip" title="No"><%= vote.no %></span>
           <!-- <input type="hidden" name="name" value="vote.name"> -->
         </li>
         <% end %>

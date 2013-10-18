@@ -1,7 +1,22 @@
-<h1>Hello from new</h1>
-<br>
-<form action="/comments" method="post">
-  <label for="content">New Comment</label>
-  <textarea name="content" id="content" cols="30" rows="10"></textarea>
-  <input type="submit" value="Submit">
-</form>
+<% content_for :title do %>
+  New Comment
+<% end %>
+<div class="comment-container">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>New Comment</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <form action="/comments" method="post">
+        <label for="content">New Comment</label>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        <div class="button-group">
+          <input type="submit" value="Add Comment" class="button small">
+          <%= link_to 'Cancel', '/', class: 'button small secondary' %>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
