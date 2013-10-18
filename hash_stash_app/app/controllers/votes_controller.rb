@@ -23,7 +23,7 @@ class VotesController < ApplicationController
   def edit
     choice = params[:choice]
     id = params[:id]
-    vote = Vote.find id
+    vote = Vote.find(id)
 
     if choice == "yes"
       vote.yes += 1
